@@ -10,17 +10,36 @@ function tomarSeleccion(){
     console.log(value);
 }
 
+// selecting loading div
+const loader = document.querySelector("#loading");
+
+// showing loading
+function displayLoading() {
+    loader.classList.add("display");
+    // to stop loading after some time
+    setTimeout(() => {
+        loader.classList.remove("display");
+    }, 5000);
+}
+
+// hiding loading 
+function hideLoading() {
+    loader.classList.remove("display");
+}
+
+
 function calcular() {
     var ingreso = document.getElementById("number").value;
     while (cuadroRespuesta.lastElementChild) {
         cuadroRespuesta.removeChild(cuadroRespuesta.lastElementChild);}
-    
+        displayLoading();
     fetch("https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarblue")
 .then(response => {
 	return response.json();
 })
 .then(data => {info = data.compra})
 .then(() => {
+    hideLoading()
     var enDolares = (ingreso/info).toFixed(2);
     var nuevoElemento = document.createElement("h3");
     var nuevoTexto = document.createTextNode(`El importe ingresado corresponde a US$ ${enDolares} dólares Blue`);
