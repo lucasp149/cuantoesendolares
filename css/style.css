@@ -1,0 +1,94 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    border: solid 10px green;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10%;
+}
+
+
+
+
+/* Eliminacion de las flechas en el input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type="number"] {
+-moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.ingreso{
+    display: flex;
+    margin:0;
+    justify-content: center;
+}
+
+.modulo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+@media (max-width: 500px ) {
+    .modulo{
+        display: block;
+        justify-content: center;
+        margin-top: 10vh;
+    }
+    .modulo button{
+        width:90%;
+        height: 5vh;
+        margin-top: 10px;
+    }
+    
+}
+
+.modulo input{
+    border-radius: 20px;
+    border: 2px solid rgb(111, 201, 37);
+    font-size: 20px;
+    width: 90%;
+   
+}
+
+.modulo button{
+    background-color: rgb(111, 201, 37);
+    border-radius: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.fa-solid{
+    width: 20px;
+    height: 20px;
+}
+
+#respuesta {
+    min-height: 5vh;
+}
